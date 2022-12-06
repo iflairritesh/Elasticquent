@@ -8,7 +8,6 @@ function basicParameters()
 {
     return [
         'index' => 'my_custom_index_name',
-        'type' => 'test_table',
     ];
 }
 

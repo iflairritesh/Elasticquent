@@ -1,5 +1,5 @@
 {
-  "name": "elasticquent/elasticquent",
+  "name": "aiforilin/elasticquent",
   "type": "library",
   "description": "Maps Laravel Eloquent models to Elasticsearch types.",
   "keywords": [
@@ -7,7 +7,7 @@
     "eloquent",
     "laravel"
   ],
-  "homepage": "https://github.com/elasticquent/Elasticquent",
+  "homepage": "https://github.com/aiforilin/Elasticquent",
   "license": "MIT",
   "authors": [
     {
@@ -19,7 +19,7 @@
   "require": {
     "php": ">=7.3.0",
     "nesbot/carbon": "~1.0|~2",
-    "elasticsearch/elasticsearch": "~6.1"
+    "elasticsearch/elasticsearch": "~8.5"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.2|~5.0|~8.0|^9.0",

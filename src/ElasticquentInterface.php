@@ -25,13 +25,6 @@ interface ElasticquentInterface
     public function getIndexName();
 
     /**
-     * Get Type Name
-     *
-     * @return string
-     */
-    public function getTypeName();
-
-    /**
      * Uses Timestamps In Index.
      */
     public function usesTimestampsInIndex();
@@ -162,13 +155,4 @@ interface ElasticquentInterface
      * @return
      */
     public static function getMapping();
-
-    /**
-     * Type Exists
-     *
-     * Does this type exist?
-     *
-     * @return bool
-     */
-    public static function typeExists();
 }

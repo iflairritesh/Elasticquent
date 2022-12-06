@@ -24,7 +24,6 @@ class ElasticSearchMethodsTest extends PHPUnit_Framework_TestCase
             'hits' => [
                 [
                     '_index' => 'my_custom_index_name',
-                    '_type' => 'test_table',
                     '_score' => 0.7768564,
                     '_source' => [
                         'name' => 'foo',
@@ -32,7 +31,6 @@ class ElasticSearchMethodsTest extends PHPUnit_Framework_TestCase
                 ],
                 [
                     '_index' => 'my_custom_index_name',
-                    '_type' => 'test_table',
                     '_score' => 0.5634561,
                     '_source' => [
                         'name' => 'bar',
