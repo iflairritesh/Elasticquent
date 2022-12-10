@@ -16,6 +16,9 @@ return array(
     'config' => [
         'hosts'     => ['localhost:9200'],
         'retries'   => 1,
+	    'username'  => env('ELASTICSEARCH_USERNAME', ''),
+	    'password'  => env('ELASTICSEARCH_PASSWORD', ''),
+	    'certificate' => storage_path(env('ELASTICSEARCH_CERTIFICATE', ''), 'app/certs/http_ca.crt'),
     ],
 
     /*

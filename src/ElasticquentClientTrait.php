@@ -9,19 +9,25 @@ trait ElasticquentClientTrait
     /**
      * Get ElasticSearch Client
      *
-     * @return \Elasticsearch\Client
+     * @return \Elastic\Elasticsearch\Client
      */
     public function getElasticSearchClient()
     {
         $config = $this->getElasticConfig();
 
-        // elasticsearch v2.0 using builder
-        if (class_exists('\Elasticsearch\ClientBuilder')) {
-            return \Elasticsearch\ClientBuilder::fromConfig($config);
-        }
+	    $clientBuilder = \Elastic\Elasticsearch\ClientBuilder::create()
+		    ->setHosts($config['hosts'])
+	        ->setRetries($config['retries']);
 
-        // elasticsearch v1
-        return new \Elasticsearch\Client($config);
+	    if (!empty($config['username'])) {
+		    $clientBuilder->setBasicAuthentication($config['username'], $config['password']);
+	    }
+
+	    if (!empty($config['certificate'])) {
+		    $clientBuilder->setCABundle($config['certificate']);
+	    }
+
+        return $clientBuilder->build();
     }
 
 }
