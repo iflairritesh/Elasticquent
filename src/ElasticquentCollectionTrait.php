@@ -51,12 +51,11 @@ trait ElasticquentCollectionTrait
                 $params['body'][] = $item->getIndexDocumentData();
             }
 
-            $result = $this->getElasticSearchClient()->bulk($params);
-
-            // Check for errors
-            if ( (array_key_exists('errors', $result) && $result['errors'] != false ) || (array_key_exists('Message', $result) && stristr('Request size exceeded', $result['Message']) !== false)) {
-                break;
-            }
+	        try {
+		        $result = $this->getElasticSearchClient()->bulk($params);
+	        } catch (\Exception $e) {
+		        break;
+	        }
 
             // Remove vars immediately to prevent them hanging around in memory, in case we have a large number of iterations
             unset($chunk, $params);
